@@ -14,6 +14,11 @@ connectDB();
 setupSocket(server);
 
 app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000"], // Allow requests from the frontend (React app)
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    credentials: true // Allow cookies or authentication headers
+  }));
 app.use(express.json());
 
 // Routes
