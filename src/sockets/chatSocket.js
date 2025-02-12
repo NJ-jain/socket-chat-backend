@@ -4,9 +4,10 @@ const Message = require("../models/Message"); // Import Message Model
 const setupSocket = (server) => {
     const io = socketIo(server, {
         cors: {
-            origin: ["http://localhost:3000", "https://your-frontend-domain.com"],
+            origin: ["http://localhost:3000", "https://your-frontend.com"],
             methods: ["GET", "POST"]
-        }
+        },
+        transports: ["websocket", "polling"] // Ensure WebSocket support
     });
 
     io.on("connection", (socket) => {
