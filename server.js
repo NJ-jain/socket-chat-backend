@@ -23,6 +23,8 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", require("./src/routes/authRoutes.js")); // User auth
 app.use("/api/messages", require("./src/routes/messageRoutes.js")); // Messages
+app.use("/api/users", require("./src/routes/userRoutes.js")); // Users list
+app.use("/api/personal-messages", require("./src/routes/personalMessageRoutes.js")); // Personal messages
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
