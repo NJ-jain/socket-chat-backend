@@ -14,7 +14,7 @@ connectDB();
 setupSocket(server);
 
 app.use(cors({
-    origin: ["http://localhost:3000" , "https://chat-app-frontend-nu-two.vercel.app/"], // Allow requests from the frontend (React app)
+    origin: process.env.FRONTEND_URL, // Allow requests from the frontend (React app)
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     credentials: true // Allow cookies or authentication headers
   }));
