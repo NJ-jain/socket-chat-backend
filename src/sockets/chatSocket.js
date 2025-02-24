@@ -5,7 +5,8 @@ const PersonalMessage = require("../models/PersonalMessages"); // Import Persona
 const setupSocket = (server) => {
     const io = socketIo(server, {
         cors: {
-            origin: ["http://localhost:3000", "https://your-frontend.com"],
+    origin: ["http://localhost:3000" , "https://chat-app-frontend-nu-two.vercel.app/"], // Allow requests from the frontend (React app)
+
             methods: ["GET", "POST"]
         },
         transports: ["websocket", "polling"] // Ensure WebSocket support
